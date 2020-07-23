@@ -27,14 +27,6 @@ Tree* findName(Tree* root, string name)
 Tree& Tree::addFather(string rootName, string fatherName)
 {
     Tree* runner = findName(this, rootName);
-    // while(runner != NULL && runner->name != rootName)
-    //     runner = runner->Father;
-    // if(runner == NULL)
-    // {
-    //     runner = this;
-    //     while(runner != NULL && runner->name != rootName)
-    //         runner = runner->Mother;
-    // }
     if(runner != NULL && runner->Father == NULL)
     {
         runner->Father = new Tree(fatherName, this);
@@ -46,15 +38,6 @@ Tree& Tree::addFather(string rootName, string fatherName)
 Tree& Tree::addMother(string rootName, string motherName)
 {
     Tree* runner = findName(this, rootName);
-    // Tree* runner = this;
-    // while(runner != NULL && runner->name != rootName)
-    //     runner = runner->Father;
-    // if(runner == NULL)
-    // {
-    //     runner = this;
-    //     while(runner != NULL && runner->name != rootName)
-    //         runner = runner->Mother;
-    // }
     if(runner != NULL && runner->Mother == NULL)
     {
         runner->Mother = new Tree(motherName, this);
